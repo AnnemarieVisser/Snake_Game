@@ -1,7 +1,16 @@
+* {
+    margin: auto;
+    text-align: center;
+}
+body{
+    background-color: #bdb2ff;
+    font-family: 'Reggae One', cursive;
+}
+
 .grid {
     width: 200px;
     height: 200px;
-    border: 5px solid black;
+    border: 5px solid #a0c4ff;
     display: flex;
     flex-wrap: wrap;
 }
@@ -9,5 +18,20 @@
 .squares {
     width: 20px;
     height: 20px;
-    background-color: aliceblue;
+    background-color: #fffffc;
+}
+
+.snake {
+    background-color: #caffbf;
+}
+
+#start {
+    background-color: #fdffb6;
+    border: none;
+    text-align: center;
+    height: 50px;
+    width: 200px;
+    font-family: 'Reggae One', cursive;
+    border-radius: 10px;
+    box-shadow: 0 0 3px black;
 }
