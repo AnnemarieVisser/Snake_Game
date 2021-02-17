@@ -22,6 +22,10 @@ body{
 }
 
 .snake {
+    background-color: #06d6a0;
+}
+
+.apple {
     background-color: #caffbf;
 }
 
