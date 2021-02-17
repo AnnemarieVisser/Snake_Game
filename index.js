@@ -11,6 +11,8 @@ let direction = 1;
 let width = 10;
 //Index to place apple for snek to eat
 let appleIndex = 0;
+let currentSnake = [2, 1, 0];
+let direction = 1;
 
 //Create full grid in which to play Snake (100 divs that will be colored)
 const createGrid = () => {
@@ -57,6 +59,7 @@ const moveSnake = () => {
     squares[currentSnake[0]].classList.add('snake');
 };
 
+
 // Move snek on set interval
 moveSnake();
 let timerId = setInterval(moveSnake, 1000);
@@ -95,3 +98,8 @@ const control = (event) => {
 }
 //Event listener for the direction changes
 document.addEventListener('keydown', control)
+moveSnake();
+
+// Move snek on set interval
+let timerId = setInterval(moveSnake, 1000);
+clearInterval(timerId);
