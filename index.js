@@ -1,5 +1,6 @@
 const grid = document.querySelector(".grid");
 const startButton = document.getElementById("start");
+const stopButton = document.getElementById("stop");
 const scoreDisplay = document.getElementById("score");
 
 let squares = [];
@@ -146,7 +147,14 @@ const control = (event) => {
         console.log('no valid key pressed')
     }
 }
+
+const stopGame = () => {
+    clearInterval(timerId)
+}
 //Event listener for the direction changes
 document.addEventListener('keydown', control)
-//Event listener to start game
+//Event listener to start or restart game
 startButton.addEventListener('click', startNewGame)
+//Event listener to stop game
+stopButton.addEventListener('click', stopGame)
+

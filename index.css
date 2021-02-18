@@ -29,7 +29,7 @@ body{
     background-color: #f94144; 
 }
 
-#start {
+.button {
     background-color: #fdffb6;
     border: none;
     text-align: center;
@@ -38,4 +38,5 @@ body{
     font-family: 'Reggae One', cursive;
     border-radius: 10px;
     box-shadow: 0 0 3px black;
+    margin: 10px;
 }
