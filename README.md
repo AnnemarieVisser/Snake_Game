@@ -11,7 +11,6 @@ This game is made using HTML, CSS and vanilla JavaScript.
 
 ### To-do list
 Even a simple game as Snake can have lots of to-be-improved points! These are the points I'm working on:
-- Add a "stop" button
 - Have no apple spawn before start, only after clicking
 - Improved Snake design
 - Improved Apple design (I mean, come on, let that snake eat a mouse!)
