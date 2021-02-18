@@ -1,6 +1,6 @@
 const grid = document.querySelector(".grid");
 const startButton = document.getElementById("start");
-const score = document.getElementById("score");
+const scoreDisplay = document.getElementById("score");
 
 let squares = [];
 //snek starts off 3 blocks long
@@ -11,8 +11,15 @@ let direction = 1;
 let width = 10;
 //Index to place apple for snek to eat
 let appleIndex = 0;
-let currentSnake = [2, 1, 0];
-let direction = 1;
+// Set score to start at 0
+let score = 0;
+scoreDisplay.textContent = score;
+//Set standard movement speed to 1000 ms
+let intervalTime = 1000;
+//Set the speed increase
+let speed = 0.8
+//set timerId
+let timerId = 0
 
 //Create full grid in which to play Snake (100 divs that will be colored)
 const createGrid = () => {
@@ -29,7 +36,29 @@ const createGrid = () => {
 };
 createGrid();
 
+//create starting snek
 currentSnake.forEach(blockOfSnake => squares[blockOfSnake].classList.add('snake'))
+
+function startNewGame() {
+    //remove snake
+    currentSnake.forEach(partOfSnake => squares[partOfSnake].classList.remove('snake'))
+    //remove apple
+    squares[appleIndex].classList.remove('apple')
+    //Reset everything to default values
+    clearInterval(timerId)
+    currentSnake = [2, 1, 0]
+    score = 0
+    direction = 1
+    intervalTime = 1000
+    //Add resetted score to browser
+    scoreDisplay.textContent = score;
+    //generate new apple
+    generateApples()
+    //Add snek class to new currentSnake
+    currentSnake.forEach(resettedSnakePart => squares[resettedSnakePart].classList.add('snake'))
+    // Start Moving snek on set interval
+    timerId = setInterval(moveSnake, intervalTime)
+}
 
 const moveSnake = () => {
     //check if snake has reached an edge, if so, don't move
@@ -50,28 +79,49 @@ const moveSnake = () => {
 
     //otherwise continue moving loop
     //remove last element from currentSnake
-    const tail = currentSnake.pop();
+    const tail = currentSnake.pop()
     //remove styling from last element
-    squares[tail].classList.remove('snake');
+    squares[tail].classList.remove('snake')
     //add square in right direction
-    currentSnake.unshift(currentSnake[0] + direction);
+    currentSnake.unshift(currentSnake[0] + direction)
+
+    //deal with snek head getting apple
+    if (squares[currentSnake[0]].classList.contains('apple')) {
+        //remove apple
+        squares[currentSnake[0]].classList.remove('apple')
+        //grow snek by one
+        squares[tail].classList.add('snake')
+        //grow snek array
+        currentSnake.push(tail)
+        //generate new apple
+        generateApples()
+        //add one to score
+        score++
+        //display score
+        scoreDisplay.textContent = score
+
+        //clear old interval
+        clearInterval(timerId)
+        //speed up snek
+        intervalTime = intervalTime * speed
+        //set new interval
+        timerId = setInterval(moveSnake, intervalTime)
+    }
+
+
+
     //add styling to represent snek
-    squares[currentSnake[0]].classList.add('snake');
+    squares[currentSnake[0]].classList.add('snake')
 };
-
-
-// Move snek on set interval
-moveSnake();
-let timerId = setInterval(moveSnake, 1000);
 
 //Generate apples for snek to eat
 function generateApples() {
     do {
-        //get a radnom number which correlates with a grid square
+        //get a random number which correlates with a grid square
         appleIndex = Math.floor(Math.random() * squares.length);
         //while head of snek is on the apple
     } while (squares[appleIndex].classList.contains('snake'))
-    //then change one square to be the new apple
+    //then change one square to be the apple
     squares[appleIndex].classList.add('apple')
 }
 //invoke apple function to create an apple on the grid
@@ -98,8 +148,5 @@ const control = (event) => {
 }
 //Event listener for the direction changes
 document.addEventListener('keydown', control)
-moveSnake();
-
-// Move snek on set interval
-let timerId = setInterval(moveSnake, 1000);
-clearInterval(timerId);
+//Event listener to start game
+startButton.addEventListener('click', startNewGame)
