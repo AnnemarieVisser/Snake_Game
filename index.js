@@ -157,3 +157,4 @@ document.addEventListener('keydown', control)
 startButton.addEventListener('click', startNewGame)
 //Event listener to stop game
 stopButton.addEventListener('click', stopGame)
+
