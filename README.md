@@ -8,18 +8,21 @@ This game is made using HTML, CSS and vanilla JavaScript.
 - Got the snake moving
 - Snake grows and speeds up after eating an apple
 - Added a stop button
+- Have no apple spawn before start, only after clicking
+- Add reset button
+- Working keyboard buttons on the page so you can control it on mobile/tablet
+- Added a switch to determine direction of the snake
 
 ### To-do list
 Even a simple game as Snake can have lots of to-be-improved points! These are the points I'm working on:
-- Have no apple spawn before start, only after clicking
 - Improved Snake design
-- Improved Apple design (I mean, come on, let that snake eat a mouse!)
+- Improved Apple design
 - Improved overall appearance
-- Working keyboard buttons on the page so you can control it on mobile/tablet
 - A "You lost the game" message after hitting a wall or eating yourself
 - A "You won the game" message if you've eaten all the mice
 - Level system (snake moving faster, larger grid)
 - High score feature (send score to remote database, shows top x scores)
+- Buttons run their own function in stead of passing through a switch
 
 ##### Credits
 This game was inspired by following along on the Scrimba course. You can find the course here: https://scrimba.com/learn/snakegame . 
