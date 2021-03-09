@@ -65,6 +65,7 @@ const moveSnake = () => {
     squares[tail].classList.remove('snake')
     currentSnake.unshift(currentSnake[0] + direction)
 
+    squares[currentSnake[0]].classList.add('snake')
     if (squares[currentSnake[0]].classList.contains('apple')) {
         squares[currentSnake[0]].classList.remove('apple')
         squares[tail].classList.add('snake')
@@ -76,13 +77,14 @@ const moveSnake = () => {
         intervalTime = intervalTime * speed
         timerId = setInterval(moveSnake, intervalTime)
     }
-    squares[currentSnake[0]].classList.add('snake')
+
 };
 
 const generateApple = () => {
     do {
         appleIndex = Math.floor(Math.random() * squares.length);
     } while (squares[appleIndex].classList.contains('snake'))
+
     squares[appleIndex].classList.add('apple')
 }
 
@@ -101,7 +103,7 @@ const controlSnake = (event) => {
             direction = + width;
             break;
         default:
-            return console.log('default')
+            return;
     }
 }
 
