@@ -18,7 +18,7 @@ let appleIndex = 0;
 let score = 0;
 scoreDisplay.textContent = score;
 let intervalTime = 1000;
-let speed = 0.5
+let speed = 0.8
 let timerId = 0
 
 const createGrid = () => {
