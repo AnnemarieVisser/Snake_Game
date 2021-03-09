@@ -18,6 +18,7 @@ This game is made using HTML, CSS and vanilla JavaScript.
 ### To-do list
 Even a simple game as Snake can have lots of to-be-improved points! These are the points I'm working on:
 - Improved Snake design
+- Set fixed max speed
 - Fix Bugs
 - A "You won the game" message if you've eaten all the apples
 - Level system (snake moving faster, larger grid)
