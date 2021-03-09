@@ -4,19 +4,25 @@
 <head>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <script defer src="index.js"></script>
     <title>Snake Game</title>
 </head>
 
 <body>
-    <h1>Snake Game</h1>
+    <h1 class="title">Snake Game</h1>
+    <h2 class="h2">How to play:</h2>
+    <p class="paragraph">Press start to start the game. Use the arrow keys on your keyboard or the buttons below to
+        direct
+        the snake
+        towards the apples. Try to grab as many apples as you can without hitting the wall or eat yourself!</p>
     <button class="button" id="start">Start </button>
     <br />
     <button class="button" id="stop">Stop </button>
     <br />
     <button class="button" id="reset">Reset </button>
     <h2>Score: <span id="score"></span></h2>
+    <h2 id="stopped"></h2>
     <div class="grid"></div>
     <div class="mousecontrols">
         <button class="control" id="up">Up</button>

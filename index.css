@@ -1,17 +1,31 @@
 * {
     margin: auto;
     text-align: center;
-    font-family: 'Reggae One', cursive;
+    font-family: 'DotGothic16', sans-serif;
 }
 
 body{
-    background-color: #bdb2ff;
+    background-color: #0f0f0f;
+    color: #fca311;
+    max-width: 640px;
+}
+
+.paragraph {
+    padding: 20px;
+}
+
+.h2 {
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 100px;
 }
 
 .grid {
     width: 200px;
     height: 200px;
-    border: 5px solid #a0c4ff;
+    border: 3px solid #14213d;
     display: flex;
     flex-wrap: wrap;
 }
@@ -23,23 +37,23 @@ body{
 }
 
 .snake {
-    background-color: #06d6a0;
+    background-color: #70e000;
 }
 
 .apple {
-    background-color: #f94144;
+    background-color: #dd2c2f;
 }
 
 .button {
-    background-color: #fdffb6;
+    background-color: #f1c47b;
     border: none;
     text-align: center;
-    height: 50px;
+    height: 40px;
     width: 150px;
-    font-family: 'Reggae One', cursive;
     border-radius: 10px;
     box-shadow: 0 0 3px black;
     margin: 5px;
+    font-weight: 800;
 }
 
 .control {
@@ -49,4 +63,11 @@ body{
     margin: 5px;
     border-radius: 5px;
     box-shadow: 0 0 3px black;
+    background-color: #B1B4BB;
+}
+
+@media only screen and (max-width: 500px) {
+    .title {
+        font-size: 50px;
+    }
 }

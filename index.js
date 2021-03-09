@@ -3,6 +3,7 @@ const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
 const resetButton = document.getElementById("reset");
 const scoreDisplay = document.getElementById("score");
+const gameStopped = document.getElementById("stopped");
 const buttonUp = document.getElementById("up")
 const buttonDown = document.getElementById("down")
 const buttonLeft = document.getElementById("left")
@@ -40,6 +41,7 @@ const resetGame = () => {
     score = 0
     direction = 1
     scoreDisplay.textContent = score;
+    gameStopped.textContent = ""
     currentSnake.forEach(resettedSnakePart => squares[resettedSnakePart].classList.add('snake'))
 }
 
@@ -56,7 +58,7 @@ const moveSnake = () => {
         (currentSnake[0] % width === 0 && direction === -1) ||
         (currentSnake[0] - width < 0 && direction === -width) ||
         squares[currentSnake[0] + direction].classList.contains('snake'))
-        return clearInterval(timerId);
+        return clearInterval(timerId), gameStopped.textContent = " Aww, you lost! ";
 
     const tail = currentSnake.pop()
     squares[tail].classList.remove('snake')
@@ -104,6 +106,7 @@ const controlSnake = (event) => {
 
 const stopGame = () => {
     clearInterval(timerId)
+    gameStopped.textContent = " Game stopped "
 }
 
 document.addEventListener('keydown', controlSnake)
