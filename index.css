@@ -19,7 +19,7 @@ body{
 }
 
 .title {
-    font-size: 100px;
+    font-size: 70px;
 }
 
 .grid {
@@ -42,6 +42,7 @@ body{
 
 .apple {
     background-color: #dd2c2f;
+    background-image: url("apple.png");
 }
 
 .button {
@@ -53,12 +54,12 @@ body{
     border-radius: 10px;
     box-shadow: 0 0 3px black;
     margin: 5px;
-    font-weight: 800;
+    font-size: 15px;
 }
 
 .control {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
@@ -66,8 +67,19 @@ body{
     background-color: #B1B4BB;
 }
 
-@media only screen and (max-width: 500px) {
+.howtoplay {
+    margin: 10px;
+    border: 1px solid #14213d;
+    box-shadow: 0 0 5px #3a86ff;
+}
+
+@media only screen and (min-width: 500px) {
     .title {
-        font-size: 50px;
+        font-size: 90px;
+    }
+
+    .control {
+        width: 100px;
+        height: 100px;
     }
 }

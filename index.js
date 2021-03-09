@@ -18,7 +18,7 @@ let appleIndex = 0;
 let score = 0;
 scoreDisplay.textContent = score;
 let intervalTime = 1000;
-let speed = 0.8
+let speed = 0.5
 let timerId = 0
 
 const createGrid = () => {
@@ -37,6 +37,7 @@ const resetGame = () => {
     currentSnake.forEach(partOfSnake => squares[partOfSnake].classList.remove('snake'))
     squares[appleIndex].classList.remove('apple')
     clearInterval(timerId)
+    intervalTime = 1000;
     currentSnake = [2, 1, 0]
     score = 0
     direction = 1
