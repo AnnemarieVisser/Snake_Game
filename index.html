@@ -5,21 +5,16 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="index.js"></script>
     <title>Snake Game</title>
 </head>
 
 <body>
     <h1 class="title">Snake Game</h1>
-    <h2 class="h2">How to play:</h2>
-    <p class="paragraph">Press start to start the game. Use the arrow keys on your keyboard or the buttons below to
-        direct
-        the snake
-        towards the apples. Try to grab as many apples as you can without hitting the wall or eat yourself!</p>
     <button class="button" id="start">Start </button>
     <br />
     <button class="button" id="stop">Stop </button>
-    <br />
     <button class="button" id="reset">Reset </button>
     <h2>Score: <span id="score"></span></h2>
     <h2 id="stopped"></h2>
@@ -30,6 +25,14 @@
         <button class="control" id="left">Left</button>
         <button class="control" id="down">Down</button>
         <button class="control" id="right">Right</button>
+    </div>
+
+    <div class="howtoplay">
+        <h2 class="h2">How to play:</h2>
+        <p class="paragraph">Press start to start the game. Use the arrow keys on your keyboard or the buttons below to
+            direct
+            the snake
+            towards the apples. Try to grab as many apples as you can without hitting the wall or eat yourself!</p>
     </div>
 </body>
 
