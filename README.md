@@ -12,13 +12,12 @@ This game is made using HTML, CSS and vanilla JavaScript.
 - Add reset button
 - Working keyboard buttons on the page so you can control it on mobile/tablet
 - Added a switch to determine direction of the snake
+- A "You lost the game" message after hitting a wall or eating yourself
 
 ### To-do list
 Even a simple game as Snake can have lots of to-be-improved points! These are the points I'm working on:
 - Improved Snake design
 - Improved Apple design
-- Improved overall appearance
-- A "You lost the game" message after hitting a wall or eating yourself
 - A "You won the game" message if you've eaten all the mice
 - Level system (snake moving faster, larger grid)
 - High score feature (send score to remote database, shows top x scores)
